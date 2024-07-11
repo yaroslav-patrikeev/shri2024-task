@@ -1,5 +1,6 @@
 import React from "react";
 import { TABS, TABS_KEYS } from "./constants/contants";
+import CustomEvent from "./components/CustomEvent";
 
 export default function App() {
   const ref = React.useRef();
