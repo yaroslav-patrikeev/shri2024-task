@@ -1,6 +1,5 @@
 import React from "react";
 import { TABS, TABS_KEYS } from "./constants/contants";
-import LazyCustomEvent from "./components/LazyCustomEvent";
 
 export default function App() {
   const ref = React.useRef();
@@ -75,19 +74,19 @@ export default function App() {
                   </ul>
               </div>
               <ul className="hero-dashboard__schedule">
-                  <LazyCustomEvent
+                  <CustomEvent
                       icon="temp"
                       iconLabel="Температура"
                       title="Philips Cooler"
                       subtitle="Начнет охлаждать в 16:30"
                   />
-                  <LazyCustomEvent
+                  <CustomEvent
                       icon="light"
                       iconLabel="Освещение"
                       title="Xiaomi Yeelight LED Smart Bulb"
                       subtitle="Включится в 17:00"
                   />
-                  <LazyCustomEvent
+                  <CustomEvent
                       icon="light"
                       iconLabel="Освещение"
                       title="Xiaomi Yeelight LED Smart Bulb"
@@ -101,32 +100,32 @@ export default function App() {
           <h2 className="section__title section__title-header">Избранные сценарии</h2>
 
           <ul className="event-grid">
-              <LazyCustomEvent
+              <CustomEvent
                   slim={true}
                   icon="light2"
                   iconLabel="Освещение"
                   title="Выключить весь свет в доме и во дворе"
               />
-              <LazyCustomEvent
+              <CustomEvent
                   slim={true}
                   icon="schedule"
                   iconLabel="Расписание"
                   title="Я ухожу"
               />
-              <LazyCustomEvent
+              <CustomEvent
                   slim={true}
                   icon="light2"
                   iconLabel="Освещение"
                   title="Включить свет в коридоре"
               />
-              <LazyCustomEvent
+              <CustomEvent
                   slim={true}
                   icon="temp2"
                   iconLabel="Температура"
                   title="Набрать горячую ванну"
                   subtitle="Начнётся в 18:00"
               />
-              <LazyCustomEvent
+              <CustomEvent
                   slim={true}
                   icon="temp2"
                   iconLabel="Температура"
@@ -172,7 +171,7 @@ export default function App() {
                   <div key={key} role="tabpanel" className={'section__panel' + (key === activeTab ? '' : ' section__panel_hidden')} aria-hidden={key === activeTab ? 'false' : 'true'} id={`panel_${key}`} aria-labelledby={`tab_${key}`}>
                       <ul className="section__panel-list">
                           {TABS[key].items.map((item, index) =>
-                              <LazyCustomEvent
+                              <CustomEvent
                                   key={index}
                                   {...item}
                                   onSize={onSize}
